@@ -1,0 +1,53 @@
+﻿<Window x:Class="NerdAppV3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NerdAppV3"
+        mc:Ignorable="d"
+        Height="450" Width="500"
+        WindowStyle="None" 
+        AllowsTransparency="True" ResizeMode="CanResizeWithGrip" Background="Black" Opacity="0.95"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="{x:Type RichTextBox}">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel x:Name="RootWindow">
+        <DockPanel DockPanel.Dock="Left" Margin="10,10,10,10">
+            <StackPanel Name="MainMenu" Orientation="Vertical" HorizontalAlignment="Left">
+                
+            </StackPanel>
+        </DockPanel>
+
+        <DockPanel x:Name="TitleBar" DockPanel.Dock="Top">
+            <Button x:Name="CloseButton" Content="x"
+                    Click="CloseButton_Click"                 
+                    DockPanel.Dock="Right" />
+            <Button x:Name="MinButton" Content="-"
+                    Click="MinimizeButton_Click"
+                    DockPanel.Dock="Right" />
+            <TextBlock HorizontalAlignment="Center">NerdNote</TextBlock>            
+        </DockPanel>
+        <RichTextBox x:Name="NoteArea" Background="Transparent" Foreground="White" BorderThickness="0" Block.LineHeight="1"> <!--todo kolor kursora do pisania-->
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="type here.."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        
+    </DockPanel>
+</Window>
