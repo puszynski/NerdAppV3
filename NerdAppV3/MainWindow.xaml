@@ -16,6 +16,9 @@
             <Setter Property="Foreground" Value="DimGray"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
         </Style>
         <Style TargetType="{x:Type RichTextBox}">
             <Setter Property="Background" Value="Blue"/>
@@ -26,7 +29,7 @@
     </Window.Resources>
 
     <DockPanel x:Name="RootWindow">
-        <DockPanel DockPanel.Dock="Left" Margin="10,10,10,10">
+        <DockPanel DockPanel.Dock="Left" Margin="20">
             <StackPanel Name="MainMenu" Orientation="Vertical" HorizontalAlignment="Left">
                 
             </StackPanel>
@@ -39,8 +42,13 @@
             <Button x:Name="MinButton" Content="-"
                     Click="MinimizeButton_Click"
                     DockPanel.Dock="Right" />
-            <TextBlock HorizontalAlignment="Center">NerdNote</TextBlock>            
+            <TextBlock HorizontalAlignment="Center" 
+                       Foreground="White" 
+                       DockPanel.Dock="Right">
+                NerdNote
+            </TextBlock>            
         </DockPanel>
+        
         <RichTextBox x:Name="NoteArea" Background="Transparent" Foreground="White" BorderThickness="0" Block.LineHeight="1"> <!--todo kolor kursora do pisania-->
             <FlowDocument>
                 <Paragraph>
